@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/imag/colores.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/imag/colores.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Selfie Live</title>
 </head>
@@ -22,8 +23,8 @@
     </nav> 
  
     <header class="imagenesArriba">
-        <div class="imagen1">
-            <img  src="./assets/imag/Project 3.jpg" alt="">
+        <div  class="imagen1">
+            <img src="./assets/imag/Project 3.jpg" alt="">
         </div>
         <div class="imagen2">
             <img  src="./assets/imag/Project 3 (1).jpg" alt="">
@@ -34,7 +35,9 @@
     <main class="portada">
        
         <div class="portada__logo"> 
-            <img class="logo__img" src="./assets/imag/Valu Selfieminii.png" alt="">
+            <img data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1000" class="logo__img" src="./assets/imag/Valu Selfieminii.png" alt="">
             <p class="portada__logo">El mejor souvenir para tus invitados</p>
         </div>
         
@@ -55,6 +58,10 @@
         <h5>©2022 ValentinaGonzalez, todos los derechos reservados</h5>
 
     </footer>
-  
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 </body>
+
 </html>
