@@ -1,0 +1,122 @@
+@media(min-width:1200px){
+    .inicio{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 40px 200px auto auto auto;
+        grid-template-areas: 
+                            "navegador navegador navegador"
+                            "header header header"
+                            "portada portada portada"
+                            "aside aside aside"
+                            "footer footer footer";
+                            
+    }
+    .imagenesArriba{
+        justify-content: space-between;
+    }
+    .navegador{
+        border-bottom: #CED6D9 1px solid;
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            li{
+                margin: 5px;
+                padding: 5px;
+                font-size: 15px;
+                
+            }
+        }
+        label{
+            display: none;
+        }
+    }
+    
+    .portada .portada__logo img{
+        height: auto;
+        width: auto;
+        max-width: 400px;
+        max-height: 400px;
+        margin: 10px;
+        padding: 10px;
+        
+    }
+    .portada .portada__logo p{
+        font-size: 16px;
+        margin-bottom: 50px;
+        margin-left: 60px;
+    }
+
+    .aside{
+        font-size: 15px;
+    }
+    .imagen1 img{
+        height: auto;
+        width: auto;
+        max-width:400px;
+        max-height: 400px;
+        margin: 0px 5px 5px 20px;
+        
+    
+    }
+    
+    .imagen2 img{
+        height: auto;
+        width: auto;
+        max-width: 400px;
+        max-height: 400px;
+        margin: 0px 20px 5px 5px;
+        
+    }
+    .descripcion__servicio {
+ 
+        width:600px;
+        text-align: center;
+        font-size: 15px;
+        margin: 5px;
+        padding: 5px;
+    }
+    .indicacionesFuncion .parrafoComoFunciona{
+        width: 600px;
+        font-size: 15px;
+    }
+    
+    .indicacionesFuncion .imagenComoFunciona{
+        margin: 5px;
+        padding: 5px;
+        transition: all 1s;
+        
+    }
+    
+    .imagenComoFunciona:hover{
+        transform: scale(1.4);
+    }
+
+    .fotos{
+        grid-area: fotos;
+        img{
+            width: 250px;
+            height: 140px;
+        }
+        
+    }
+    
+    .consulta{
+        justify-content: center;
+    }
+    
+    .consulta__info{
+        font-size: 15px;
+        width: 550px;
+        margin: 50px 10px 10px 10px;
+    }
+    
+    .datos{
+        font-size: 15px;
+        
+    }
+    
+    footer{
+        font-size: 15px;
+    }
+}
