@@ -308,8 +308,12 @@ footer{
             background-color: #ffff;
             &:hover{
                 background-color: #CED6D9;
-
             }
+            a{
+                text-decoration: none;
+            }
+
+            
         
         }
 
@@ -317,7 +321,21 @@ footer{
     }
 }
 
+.evento{
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    img{
+        transition: all 1s;
+        margin:10px;
+        &:hover{
+            transform: scale(1.2);
+        }
+        
 
+    }
+}
 
 
 .body__contacto{

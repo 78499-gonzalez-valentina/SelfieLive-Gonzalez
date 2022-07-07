@@ -268,6 +268,23 @@ footer {
 .fotos .tarjeta button:hover {
   background-color: #CED6D9;
 }
+.fotos .tarjeta button a {
+  text-decoration: none;
+}
+
+.evento {
+  margin: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.evento img {
+  transition: all 1s;
+  margin: 10px;
+}
+.evento img:hover {
+  transform: scale(1.2);
+}
 
 .body__contacto {
   display: grid;
