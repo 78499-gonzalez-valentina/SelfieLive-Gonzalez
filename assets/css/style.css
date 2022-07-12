@@ -259,17 +259,19 @@ footer {
   margin: 2px;
   padding: 3px;
 }
-.fotos .tarjeta button {
+.fotos .tarjeta .btn, .fotos .tarjeta .button {
+  border: 0;
   margin: 10px;
-  padding: 4px;
+  padding: 8px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #E4EAF5;
 }
-.fotos .tarjeta button:hover {
+.fotos .tarjeta .btn:hover, .fotos .tarjeta .button:hover {
   background-color: #CED6D9;
 }
-.fotos .tarjeta button a {
+.fotos .tarjeta .btn a, .fotos .tarjeta .button a {
   text-decoration: none;
+  color: black;
 }
 
 .evento {
@@ -313,7 +315,7 @@ footer {
 
 .consulta__info {
   font-size: 12px;
-  margin: 10px 10px 10px 10px;
+  margin: 10px;
   padding: 5px;
   width: 320px;
 }
@@ -328,6 +330,14 @@ footer {
   margin: 20px;
   padding: 30px;
   border-radius: 15px;
+}
+
+.boton {
+  border: 0;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #E4EAF5;
 }
 
 @media (min-width: 768px) {

@@ -278,16 +278,33 @@ footer{
     padding: 5px;
 }
 
+$btn:(
+    borde: 0,
+    margen: 10px,
+    padding: 8px,
+    border-radius: 5px,
+    color: #E4EAF5,
+);
+
+$tarjeta:(
+    borde: 1px #CED6D9 solid,
+    border-radius:10px,
+    margen: 5px,
+    padding: 5px,
+    
+
+);
+
 .fotos{
     grid-area: fotos;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     .tarjeta{
-        border: 1px #CED6D9 solid;
-        border-radius: 10px;
-        margin: 5px;
-        padding: 5px;
+        border: map-get($tarjeta , borde );
+        border-radius: map-get($tarjeta , border-radius );
+        margin: map-get($tarjeta, margen );
+        padding: map-get($tarjeta, padding );
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -301,16 +318,18 @@ footer{
             margin: 2px;
             padding:3px;
         }
-        button{
-            margin: 10px;
-            padding: 4px;
-            border-radius: 5px;
-            background-color: #ffff;
+        .btn{
+            border: map-get($btn, borde );
+            margin: map-get($btn , margen );
+            padding: map-get($btn , padding );
+            border-radius: map-get($btn , border-radius );
+            background-color: map-get($btn , color );
             &:hover{
                 background-color: #CED6D9;
             }
             a{
                 text-decoration: none;
+                color: black;
             }
 
             
@@ -320,6 +339,12 @@ footer{
     
     }
 }
+
+.button{
+    @extend .btn;
+}
+
+
 
 .evento{
     margin: 50px;
@@ -349,11 +374,16 @@ footer{
                         "footer footer footer";
 }
 
+
+@mixin propiedades($margin , $padding) {
+    margin: $margin;
+    padding: $padding;
+    
+}
 .titulo__contacto{
     grid-area: header;
     text-align: center;
-    margin: 10px;
-    padding: 5px;
+    @include propiedades(10px,5px );
     font-size: 13px;
 }
 
@@ -370,21 +400,25 @@ footer{
 
 .consulta__info{
     font-size: 12px;
-    margin: 10px 10px 10px 10px;
-    padding: 5px;
+    @include propiedades(10px,5px );
     width: 320px;
 }
 
 .datos{
     font-size: 12px;
-    margin: 10px;
-    padding: 5px;
+    @include propiedades(10px,5px);
     
 }
 .borde{
-    margin: 20px;
-    padding: 30px;
+    @include propiedades(20px,30px);
     border-radius: 15px;
     
 
+}
+
+.boton{
+    border: 0;
+    @include propiedades(5px,8px);
+    border-radius: 5px;
+    background-color: #E4EAF5;
 }
