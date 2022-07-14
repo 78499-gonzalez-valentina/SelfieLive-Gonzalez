@@ -11,8 +11,8 @@
   background-size: cover;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: auto auto;
-  grid-template-areas: "navegador navegador navegador" "portada portada portada";
+  grid-template-rows: auto 600px auto auto;
+  grid-template-areas: "navegador" "portada" "aside" "footer";
 }
 
 .navegador {
@@ -75,11 +75,80 @@
   grid-area: portada;
 }
 
+aside {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  background-color: white;
+  grid-area: aside;
+  align-items: center;
+  flex-direction: column;
+}
+aside h1 {
+  margin: 15px;
+  padding: 15px;
+}
+aside .nosotros {
+  text-align: center;
+  display: flex;
+  width: 300px;
+  font-size: 12px;
+  margin: 5px;
+  padding: 10px;
+}
+aside video {
+  width: 300px;
+  margin: 20px;
+  padding: 15px;
+}
+
+.hombre {
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+}
+.hombre .tarjetaHombre {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: black 1px solid;
+  border-radius: 100px;
+}
+.hombre .tarjetaHombre img {
+  width: 100px;
+}
+.hombre .tarjetaHombre h5 {
+  color: black;
+  font-size: 15px;
+  margin: 5px;
+  padding: 5px;
+}
+
 footer {
+  background-color: #B0A697;
   grid-area: footer;
   font-size: 12px;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.9;
+}
+footer .div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+}
+footer .div h5 {
+  margin: 5px;
+  padding: 5px;
+}
+
+footer a img {
+  width: 40px;
 }
 
 .body__servicio {
@@ -327,38 +396,51 @@ footer {
   .navegador label {
     display: none;
   }
-  .portada .portada__logo img {
-    height: auto;
-    width: auto;
-    max-width: 300px;
-    max-height: 300px;
-    margin: 10px;
-    padding: 10px;
-    margin-left: 45px;
-    transition: all 1s;
+  aside {
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    background-color: white;
+    grid-area: aside;
+    align-items: center;
+    flex-direction: column;
   }
-  .portada .portada__logo img:hover {
-    transform: scale(1.1);
+  aside h1 {
+    margin: 15px;
+    padding: 15px;
   }
-  .portada .portada__logo p {
+  aside .nosotros {
+    display: flex;
+    align-items: center;
+    width: 500px;
+  }
+  aside video {
+    width: 400px;
+    margin: 20px;
+    padding: 15px;
+  }
+  .hombre {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+  }
+  .hombre .tarjetaHombre {
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: black 1px solid;
+    border-radius: 100px;
+  }
+  .hombre .tarjetaHombre img {
+    width: 150px;
+  }
+  .hombre .tarjetaHombre h5 {
+    color: black;
     font-size: 16px;
-    margin-bottom: 50px;
-    text-align: center;
-  }
-  .aside {
-    font-size: 16px;
-  }
-  .imagen1 img {
-    height: auto;
-    width: auto;
-    max-width: 250px;
-    max-height: 250px;
-  }
-  .imagen2 img {
-    height: auto;
-    width: auto;
-    max-width: 250px;
-    max-height: 250px;
+    margin: 5px;
+    padding: 5px;
   }
   .descripcion__servicio {
     width: 500px;
@@ -390,11 +472,8 @@ footer {
   .inicio {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40px 200px auto auto auto;
+    grid-template-rows: 40px 200px 500px auto auto;
     grid-template-areas: "navegador navegador navegador" "header header header" "portada portada portada" "aside aside aside" "footer footer footer";
-  }
-  .imagenesArriba {
-    justify-content: space-between;
   }
   .navegador {
     border-bottom: #CED6D9 1px solid;
@@ -412,35 +491,53 @@ footer {
   .navegador label {
     display: none;
   }
-  .portada .portada__logo img {
-    height: auto;
-    width: auto;
-    max-width: 400px;
-    max-height: 400px;
+  aside {
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    background-color: white;
+    grid-area: aside;
+    align-items: center;
+    flex-direction: column;
+  }
+  aside h1 {
+    margin: 15px;
+    padding: 15px;
+  }
+  aside .nosotros {
+    display: flex;
+    align-items: center;
+    width: 600px;
     margin: 10px;
-    padding: 10px;
+    padding: 15px;
   }
-  .portada .portada__logo p {
-    font-size: 16px;
-    margin-bottom: 50px;
-    margin-left: 60px;
+  aside video {
+    width: 400px;
+    margin: 20px;
+    padding: 15px;
   }
-  .aside {
-    font-size: 15px;
+  .hombre {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
   }
-  .imagen1 img {
-    height: auto;
-    width: auto;
-    max-width: 400px;
-    max-height: 400px;
-    margin: 0px 5px 5px 20px;
+  .hombre .tarjetaHombre {
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: black 1px solid;
+    border-radius: 100px;
   }
-  .imagen2 img {
-    height: auto;
-    width: auto;
-    max-width: 400px;
-    max-height: 400px;
-    margin: 0px 20px 5px 5px;
+  .hombre .tarjetaHombre img {
+    width: 200px;
+  }
+  .hombre .tarjetaHombre h5 {
+    color: black;
+    font-size: 18px;
+    margin: 5px;
+    padding: 5px;
   }
   .descripcion__servicio {
     width: 600px;

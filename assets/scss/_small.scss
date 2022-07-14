@@ -6,10 +6,12 @@
     
     display: grid;
     grid-template-columns: repeat(1,1fr);
-    grid-template-rows: auto auto; 
+    grid-template-rows: auto 600px auto auto; 
     grid-template-areas: 
-                        "navegador navegador navegador"
-                        "portada portada portada";
+                        "navegador"
+                        "portada"
+                        "aside"
+                        "footer";
 }
 
 .navegador{
@@ -78,16 +80,92 @@
 
 .portada{
     grid-area: portada;
-
+    
     
 }
 
+aside{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    background-color: white;
+    grid-area: aside;
+    align-items: center;
+    flex-direction: column;
+    h1{
+        margin:15px;
+        padding: 15px;
+
+    }
+    .nosotros{
+        text-align: center;
+        display: flex;
+        width: 300px;
+        font-size: 12px;
+        margin: 5px;
+        padding: 10px;
+       }
+    video{
+        width: 300px;
+        margin: 20px;
+        padding: 15px;
+    }
+}
+
+.hombre{
+   display: flex;
+   margin: 5px;
+   padding: 5px;
+   .tarjetaHombre{
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: black 1px solid;
+    border-radius: 100px;
+    img{
+        width: 100px;
+    }
+    h5{
+        color: black;
+        font-size: 15px;
+        margin: 5px;
+        padding: 5px;
+
+    }
+   
+}
+
+}
+
+
+
+
 footer{
+    background-color: #B0A697;
     grid-area: footer;
     font-size: 12px;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    align-items:center;
+    opacity: 0.9;
+    .div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5px;
+        padding: 5px;
+        h5{
+            margin: 5px;
+            padding: 5px;
+        }
+    }
 
+}
+
+footer a img{
+    width: 40px;
 }
 
 .body__servicio{
