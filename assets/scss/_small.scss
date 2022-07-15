@@ -127,11 +127,25 @@ footer input{
 .body__servicio{
     display: grid;
         grid-template-columns: repeat(1,1fr);
-        grid-template-rows: 70px auto auto;
+        grid-template-rows: 90px auto auto auto;
         grid-template-areas: 
                             "navegador navegador navegador"
+                            "header header header"
                             "main main main "
                             "footer footer footer";
+}
+
+.header__servicio{
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    padding: 10px;
+    .titulo__servicio{
+        font-size: 15px;
+    }
+    
+    
 }
 
 
@@ -182,28 +196,20 @@ footer input{
 .body__comofunciona{
     display: grid;
         grid-template-columns: repeat(1,1fr);
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: 70px auto auto;
         grid-template-areas: 
                             "navegador navegador navegador"
-                            "header header header"
                             "main main main "
                             "footer footer footer";
 }
 
-.header__comofunciona{
-    grid-area: header;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center; 
+.fondi{
+    width: 100%;
+    background-position: fixed;
+    margin-bottom: 30px;
 }
 
-.comoFunciona{
-    font-size: 12px;
-    text-align: center;
-    margin: 10px;
-    padding: 5px;
-    
-}
+
 .indicacionesFuncion{
     grid-area: main;
     display: flex;
@@ -216,6 +222,9 @@ footer input{
         &:hover{
             transform: scale(1.2);
         }
+    h1{
+        margin-top: 10px;
+    }
         
     }
     .parrafoComoFunciona{
@@ -229,9 +238,10 @@ footer input{
 
 
 .body__eventos{
+   
     display: grid;
         grid-template-columns: repeat(1,1fr);
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: 80px auto auto auto;
         grid-template-areas: 
                             "navegador navegador navegador"
                             "header header header"
@@ -260,7 +270,7 @@ $btn:(
 $tarjeta:(
     borde: none,
     border-radius:10px,
-    margen: 5px,
+    margen: 30px,
     padding: 5px,
     
 
@@ -272,7 +282,7 @@ $tarjeta:(
     flex-wrap: wrap;
     justify-content: space-evenly;
     .tarjeta{
-        background-color: #f2f5f7;
+        background: radial-gradient(#d4cfe7, white);
         border: map-get($tarjeta , borde );
         border-radius: map-get($tarjeta , border-radius );
         margin: map-get($tarjeta, margen );
@@ -290,6 +300,7 @@ $tarjeta:(
         h4{
             margin: 2px;
             padding:3px;
+            font-size: 15px;
         }
         .btn{
             border: map-get($btn, borde );
@@ -336,18 +347,16 @@ $tarjeta:(
 .evento img:hover{
     transform: scale(1.5);
 }
-
-
-.body__contacto{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas: 
-                        "navegador navegador navegador"
-                        "header header header"
-                        "main main main "
-                        "footer footer footer";
-}
+// .body__contacto{
+//     display: grid;   
+//     grid-template-columns: repeat(1,1fr);
+//     grid-template-rows: auto auto auto auto;
+//     grid-template-areas: 
+//                         "navegador navegador navegador"
+//                         "header header header"
+//                        "main main main "
+//                        "footer footer footer";
+// }
 
 
 @mixin propiedades($margin , $padding) {
@@ -356,15 +365,11 @@ $tarjeta:(
     
 }
 .titulo__contacto{
-    grid-area: header;
     text-align: center;
     @include propiedades(10px,5px );
     font-size: 13px;
 }
 
-.main__consulta{
-    grid-area: main;
-}
 
 .consulta{
     display: flex;
@@ -393,8 +398,10 @@ $tarjeta:(
     
     opacity: 0.7;
     
+    
     label{
         font-weight:bolder;
+       
     }
 
     input{
@@ -405,6 +412,7 @@ $tarjeta:(
         background: none;
         color: #000000;
         background-color: #CED6D9;
+        
     }
     textarea{
         background:none;
@@ -421,4 +429,8 @@ $tarjeta:(
     border-radius: 5px;
     background-color: #E4EAF5;
     font-weight: bolder;
+}
+
+footer{
+    grid-area: footer;
 }
