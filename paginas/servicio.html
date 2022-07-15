@@ -8,6 +8,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="shortcut icon" href="../assets/imag/colores.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>Servicio</title>
 </head>
@@ -39,29 +40,74 @@
           </div>
         </div>
       </nav>
-    <header>
-        <div class="servicio">
-            <img class="servicio__imagen" src="../assets/imag/minihash.png" alt="">
-            <h1 class="servicio__titulo">SELFIETAG</h1>
-        </div>
-        
-    </header>
-    <main class="descripcion">
-        <div class ="descripcion__servicio">
-            <p>#SELFIETAG es nuestro servicio “estrella” basado en la idea de que sean los propios participantes del evento los que generan contenidos desde sus teléfonos, publicándolos en sus redes sociales con un hashtag asociado al evento y llevándose impresas esas fotos desde nuestro punto de impresión.
+    <main class="descripcion ">
+        <div class=" serv">
+          <div class=" imagen">
+            <img src="../assets/imag/mujer.jpeg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="card-body">
+              <h5 >#SELFIETAG</h5>
+              <p >#SELFIETAG es nuestro servicio “estrella” basado en la idea de que sean los propios participantes del evento los que generan contenidos desde sus teléfonos, publicándolos en sus redes sociales con un hashtag asociado al evento y llevándose impresas esas fotos desde nuestro punto de impresión.
                 El servicio #SELFIETAG incluye la “Customización” de la fotografía, es decir, se selecciona un hashtag predeterminado por el cliente (ej.: #SELFIELIVEPARTY) que luego, al ser aplicado junto a la foto, los usuarios podrán publicar tanto en Twitter como en Instagram. Asimismo, la foto se personaliza con un marco con el logo de la marca y/o nombre del evento. Además, personal capacitado de Selfielive se encuentra siempre en el punto de impresión instalado para asesorar a los invitados y realizar las impresiones ilimitadas y de manera instantánea a medida que los invitados las publican con el hashtag definido. Finalmente, una vez que termina el evento, el personal entrega como Back Up todo el contenido fotográfico en un pendrive al responsable o coordinador del evento.</p>
+          </div>
+        </div>
+      <div class="serv" >
+          
+          <div class="card-body">
+              <h5 class="card-title">CABINA DE FOTOS</h5>
+              <p class="card-text">La cabina de fotos es el servicio mas clasico que tenemos, el que todos conocen. Previo al evento se customiza el template de las fotos permitiendo que el cliente elija el que mas se adecue a su evento.
+                Hay cabinas abiertas y cerradas, la abierta, es imaginarte un estudio fotográfico portátil. No existe un lugar en el que los invitados entran, sino más bien un telón, cortina o backdrop de fondo, en el que las personas posan frente el mueble que contiene la camara y los demás componentes electrónicos. Las cabinas de fotos abiertas generalmente pueden adaptarse a muchos espacios y pueden fotografiar a más personas. Una cabina cerrada ofrece un espacio pequeño para que los invitados se junten lo más que puedan y se saquen las fotos que se les indica en la pantalla, en ambas lo que hace que la foto sea divertida es el cotillon que tienen disponible.
+              </p>
+            
+          </div>
+          <div class=" imagen ">
+            <img src="../assets/imag/fotitoscabina.png" class="img-fluid rounded-start" alt="...">
+          </div>
+      </div>
+
+      <div  class="serv" >
+        <div class=" imagen ">
+          <img src="../assets/imag/LLAVERO (1).png" class="img-fluid rounded-start" alt="...">
+        </div>
+          
+        <div class="card-body">
+            <h5 class="card-title">SOUVENIR</h5>
+            <p class="card-text">Los souvenires son otra de las opciones que tenemos para ofrecerte, diferente a las otras, llavero personalizado con las fotos que mas te gusten. Esta opcion esta buenisima para cuando queres que tus invitads se lleven un lindo recuerdo de tu fiesta
+              que es practico y que nos gusta a todos. Con esta opcion previamente pautamos la foto o las fotos que van a ser seleccionadas para el llavero y listo despues queda todo en manos nuestras para poder entregarte el mejor producto de todos.
+            </p>
+          
         </div>
         
+    </div>
+     
     </main>
 
-    <footer>
-        <div>
-            <a class="redes__facebook" href="https://www.facebook.com/selfieliveargentina" target="_blank"><img src="../assets/imag/facebook.png" alt=""></a>
-        <a class="redes__instagram" href="https://www.instagram.com/selfieliveargentinasp/" target="_blank"><img src="../assets/imag/instagram.png" alt=""></a> 
-        </div>
-        <h5>©2022 ValentinaGonzalez, todos los derechos reservados</h5>
-
-    </footer>
+    <footer class=" p-4 d-flex justify-content-around">
+      <div  class="  d-flex flex-column align-items-start">
+        <h5>Enlaces Utiles</h5>
+        <a href="../index.html">Inicio</a>
+        <a href="../paginas/servicio.html">Servicio</a>
+        <a href="../paginas/comoFunciona.html">Como Funciona</a>
+        <a href="../paginas/eventos.html">Eventos</a>
+        <a href="../paginas/contacto.html">Contacto</a>
+      </div>
+      <div class="  d-flex flex-column">
+        <h5>Servicios</h5>
+        <a href="../paginas/servicio.html">SelfieTag</a>
+        <a href="../paginas/servicio.html">Cabina de fotos</a>
+      </div>
+      <div class="uno  d-flex flex-column align-items-center">
+          <h5>Redes Sociales</h5>
+          <a class="redes__facebook" href="https://www.facebook.com/selfieliveargentina" target="_blank"><img src="../assets/imag/facebook.png" alt=""></a>
+          <a class="redes__instagram" href="https://www.instagram.com/selfieliveargentinasp/" target="_blank"><img src="../assets/imag/instagram.png" alt=""></a> 
+      </div>
+      <div class="  d-flex flex-column ">
+          <h5>Suscribite a nuestras novedades</h5>
+          <input type="text" name="Email" id="Email" required>
+          <input type="submit" value="Suscribite" placeholder="Ingrese su email" >
+      </div>
+  </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>    
     

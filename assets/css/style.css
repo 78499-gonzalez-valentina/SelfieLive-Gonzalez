@@ -15,6 +15,10 @@
   grid-template-areas: "navegador" "portada" "aside" "footer";
 }
 
+.navbar {
+  grid-area: navegador;
+}
+
 .portada {
   grid-area: portada;
 }
@@ -73,64 +77,87 @@ aside video {
 footer {
   background-color: #E7E6EB;
   grid-area: footer;
-  font-size: 12px;
+  font-size: 11px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  opacity: 0.9;
+  opacity: 1;
 }
-footer .div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+footer h5 {
   margin: 5px;
   padding: 5px;
-}
-footer .div h5 {
-  margin: 5px;
-  padding: 5px;
+  font-size: 12px;
 }
 
 footer a img {
-  width: 40px;
+  width: 30px;
+}
+
+footer div a {
+  margin: 2px;
+  padding: 2px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer div h5 {
+  font-size: 14px;
+}
+
+footer input {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .body__servicio {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas: "navegador navegador navegador" "header header header" "main main main " "footer footer footer";
-}
-
-.servicio {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  padding: 5px;
-  grid-area: header;
-}
-.servicio .servicio__imagen {
-  width: 80px;
-}
-.servicio .servicio__titulo {
-  font-size: 20px;
+  grid-template-rows: 70px auto auto;
+  grid-template-areas: "navegador navegador navegador" "main main main " "footer footer footer";
 }
 
 .descripcion {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
   grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.descripcion__servicio {
-  width: 300px;
-  text-align: center;
-  font-size: 12px;
+.descripcion img {
+  width: 150px;
+}
+
+.descripcion h5 {
+  font-size: 16px;
+  font-weight: 700;
   margin: 5px;
-  padding: 5px;
+  padding: 10px;
+}
+
+.descripcion .serv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  margin: 15px;
+  padding: 15px;
+  background: radial-gradient(#d4cfe7, white);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  margin: 10px;
+  padding: 10px;
 }
 
 .body__comofunciona {
@@ -386,12 +413,18 @@ footer a img {
     margin: 5px;
     padding: 5px;
   }
-  .descripcion__servicio {
-    width: 500px;
-    text-align: center;
-    font-size: 15px;
+  .descripcion h5 {
+    font-size: 20px;
+    font-weight: 600;
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
+  }
+  .descripcion img {
+    width: 150px;
+  }
+  .card-body {
+    width: 500px;
+    font-size: 14px;
   }
   .indicacionesFuncion .parrafoComoFunciona {
     width: 500px;
@@ -484,12 +517,16 @@ footer a img {
     margin: 5px;
     padding: 5px;
   }
-  .descripcion__servicio {
-    width: 600px;
-    text-align: center;
-    font-size: 15px;
-    margin: 5px;
-    padding: 5px;
+  .descripcion h5 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .descripcion img {
+    width: 150px;
+  }
+  .card-body {
+    width: 800px;
+    font-size: 14px;
   }
   .indicacionesFuncion .parrafoComoFunciona {
     width: 600px;

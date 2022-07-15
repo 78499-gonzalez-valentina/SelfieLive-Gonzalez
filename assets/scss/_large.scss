@@ -85,17 +85,23 @@
     
     }
 
+    .descripcion h5{
+        font-size: 20px;
+        font-weight: 600;
+        
+    }
+
+    .descripcion img{
+        width: 150px;
+    }
+
+
+    .card-body{
+        width: 800px;
+        font-size: 14px;
+    }
 
     
-    
-    .descripcion__servicio {
- 
-        width:600px;
-        text-align: center;
-        font-size: 15px;
-        margin: 5px;
-        padding: 5px;
-    }
     .indicacionesFuncion .parrafoComoFunciona{
         width: 600px;
         font-size: 15px;
