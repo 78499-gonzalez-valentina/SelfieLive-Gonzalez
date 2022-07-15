@@ -1,8 +1,9 @@
 
 
 .inicio{
-    background: url(../imag/cropped-cropped-iuyiuyiu-011.png) no-repeat fixed center center #333;
+    background: url(../imag/fondoprincipalcel.png) no-repeat fixed center center #333;
     background-size: cover;
+    
     
     display: grid;
     grid-template-columns: repeat(1,1fr);
@@ -347,16 +348,6 @@ $tarjeta:(
 .evento img:hover{
     transform: scale(1.5);
 }
-// .body__contacto{
-//     display: grid;   
-//     grid-template-columns: repeat(1,1fr);
-//     grid-template-rows: auto auto auto auto;
-//     grid-template-areas: 
-//                         "navegador navegador navegador"
-//                         "header header header"
-//                        "main main main "
-//                        "footer footer footer";
-// }
 
 
 @mixin propiedades($margin , $padding) {
@@ -366,6 +357,7 @@ $tarjeta:(
 }
 .titulo__contacto{
     text-align: center;
+    margin-top: 100px;
     @include propiedades(10px,5px );
     font-size: 13px;
 }
@@ -382,6 +374,7 @@ $tarjeta:(
     font-size: 12px;
     @include propiedades(10px,5px );
     width: 320px;
+    margin-top: 700px;
 }
 
 .datos{
