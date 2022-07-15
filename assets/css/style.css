@@ -352,6 +352,10 @@ footer {
 }
 
 @media (min-width: 768px) {
+  .inicio {
+    background: url(../imag/cropped-cropped-iuyiuyiu-011.png) no-repeat fixed center center #333;
+    background-size: cover;
+  }
   .navegador {
     border-bottom: #CED6D9 1px solid;
   }
@@ -451,6 +455,8 @@ footer {
 }
 @media (min-width: 1200px) {
   .inicio {
+    background: url(../imag/cropped-cropped-iuyiuyiu-011.png) no-repeat fixed center center #333;
+    background-size: cover;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 40px 200px 500px auto auto;
