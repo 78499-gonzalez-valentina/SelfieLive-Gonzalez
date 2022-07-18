@@ -1,10 +1,13 @@
 
 
 .inicio{
+
+    background: url(../imag/cropped-cropped-iuyiuyiu-011.png) no-repeat fixed center center #333;
+    background-size: cover;
     
     display: grid;
     grid-template-columns: repeat(1,1fr);
-    grid-template-rows: auto 200px auto auto; 
+    grid-template-rows: auto 900px auto auto; 
     grid-template-areas: 
                         "navegador"
                          "portada"
@@ -12,21 +15,6 @@
                         "footer";
  }
  
- .mainInicio{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    padding: 10px;
-    margin-top: 50px;
-    .img1{
-        width: 300px;
-        margin-bottom: 40px;
-    }
-    .img3{
-        margin-top: 100px;
-    }
- }
 
  .navbar{
     grid-area: navegador;
@@ -368,14 +356,15 @@ $tarjeta:(
     padding: $padding;
     
 }
-.titulo__contacto{
-    text-align: center;
-    margin-top: 100px;
-    @include propiedades(10px,5px );
-    font-size: 13px;
+
+.titulo_consulta{
+    display: flex;
+    justify-content: center;
 }
+.titulo_consulta h1{
+    margin-top: 80px;
 
-
+}
 .consulta{
     display: flex;
     flex-wrap: wrap;
