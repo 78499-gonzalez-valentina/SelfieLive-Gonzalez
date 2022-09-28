@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="../js/servicios.js"></script>
+    <script defer src="../js/carrito.js"></script>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="shortcut icon" href="../assets/imag/colores.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Servicios</title>
+    <title>Carrito</title>
 </head>
-<body class="body__servicio">
+<body class="body__carrito">
     <nav class="navbar navbar-expand-lg bg-light fixed-top ">
         <div class="container-fluid ">
           <a class="navbar-brand" href="../index.html"><img class="m-1" src="../assets/imag/logominiiiii.png" alt=""></a>
@@ -26,7 +26,7 @@
                 <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="../paginas/servicio.html">Servicios</a>
+                <a class="nav-link" href="../paginas/servicio.html">Servicios</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../paginas/comoFunciona.html">Como funciona</a>
@@ -39,60 +39,56 @@
               </li>
             </ul>
           </div>
-          <a href="../paginas/carrito.html"><img src="../assets/imag/carrito.png" alt=""></a>
+          <a class="imgCarrito" href="../paginas/carrito.html"><img src="../assets/imag/carrito.png" alt=""></a>
         </div>
       </nav>
-      <header class="header__servicio">
+      <header class="header__carrito" id="contenedorCarrito">
         <div data-aos="zoom-in" data-aos-duration="3000" class="titulo__servicio">
-          <h1>Servicios</h1>
-          <h6>Busque el servicio!</h6>
-          <div class="group">
-            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
-            <input id="buscarServicio" placeholder="Buscar" type="search" class="input">
-          </div> 
+          <h1 class="carr">Carrito</h1>
           
+
+          <table>
+            <tbody>
+              
+
+          
+            </tbody>
+        </table>
         </div>
         
     </header>
-    <main class="descripcion ">
-      <section id="container">
-      </section>
-      <section id="cart">
-      </section>
-    </main>
 
-    <footer class=" p-4 d-flex justify-content-around">
-      <div  class="  d-flex flex-column align-items-start">
-        <h5>Enlaces Utiles</h5>
-        <a href="../index.html">Inicio</a>
-        <a href="../paginas/servicio.html">Servicio</a>
-        <a href="../paginas/comoFunciona.html">Como Funciona</a>
-        <a href="../paginas/eventos.html">Eventos</a>
-        <a href="../paginas/contacto.html">Contacto</a>
-      </div>
-      <div class="  d-flex flex-column">
-        <h5>Servicios</h5>
-        <a href="../paginas/servicio.html">SelfieTag</a>
-        <a href="../paginas/servicio.html">Cabina de fotos</a>
-      </div>
-      <div class="uno  d-flex flex-column align-items-center">
-          <h5>Redes Sociales</h5>
-          <a class="redes__facebook" href="https://www.facebook.com/selfieliveargentina" target="_blank"><img src="../assets/imag/facebook.png" alt=""></a>
-          <a class="redes__instagram" href="https://www.instagram.com/selfieliveargentinasp/" target="_blank"><img src="../assets/imag/instagram.png" alt=""></a> 
-      </div>
-      <div class="  d-flex flex-column ">
-          <h5>Suscribite a nuestras novedades</h5>
-          <input type="text" name="Email" id="Email" required>
-          <input type="submit" value="Suscribite" placeholder="Ingrese su email" >
-      </div>
-  </footer>
-  
+      <footer class=" p-4 d-flex justify-content-around">
+        <div  class="  d-flex flex-column align-items-start">
+          <h5>Enlaces Utiles</h5>
+          <a href="../index.html">Inicio</a>
+          <a href="../paginas/servicio.html">Servicio</a>
+          <a href="../paginas/comoFunciona.html">Como Funciona</a>
+          <a href="../paginas/eventos.html">Eventos</a>
+          <a href="../paginas/contacto.html">Contacto</a>
+        </div>
+        <div class="  d-flex flex-column">
+          <h5>Servicios</h5>
+          <a href="../paginas/servicio.html">SelfieTag</a>
+          <a href="../paginas/servicio.html">Cabina de fotos</a>
+        </div>
+        <div class="uno  d-flex flex-column align-items-center">
+            <h5>Redes Sociales</h5>
+            <a class="redes__facebook" href="https://www.facebook.com/selfieliveargentina" target="_blank"><img src="../assets/imag/facebook.png" alt=""></a>
+            <a class="redes__instagram" href="https://www.instagram.com/selfieliveargentinasp/" target="_blank"><img src="../assets/imag/instagram.png" alt=""></a> 
+        </div>
+        <div class="  d-flex flex-column ">
+            <h5>Suscribite a nuestras novedades</h5>
+            <input type="text" name="Email" id="Email" required>
+            <input type="submit" value="Suscribite" placeholder="Ingrese su email" >
+        </div>
+    </footer>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
 </script>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>    
-    
 </body>
 </html>
