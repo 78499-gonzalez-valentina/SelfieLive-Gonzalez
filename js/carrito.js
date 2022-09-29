@@ -49,7 +49,6 @@ function eliminarServicio(array, id)
 
  function eliminarEnBotones()
  {  
-    debugger
      carrito.forEach(serv => {
         const borrar = document.querySelector(`#btn${serv.id}`)
         borrar.addEventListener("click",  ()=> eliminarServicioDelCarrito(`${serv.id}`))

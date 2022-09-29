@@ -5,19 +5,19 @@ let servicios = [
         id:1,
         name: "SELFIETAG",
         price: 2000,
-        image: "../assets/imag/serv1.jpeg"
+        image: "../assets/imag/serv1.png"
     },
     {
         id:2,
         name: "CABINA DE FOTOS",
         price: 5000,
-        image: "../assets/imag/serv2.png"
+        image: "../assets/imag/cabinafinal.jpg"
     },
     {
         id:3,
         name: 'SOUVENIR',
         price: 300,
-        image: "../assets/imag/LLAVERO.png"
+        image: "../assets/imag/souvenir.png"
     },
     {
         id:4,
@@ -37,6 +37,13 @@ let servicios = [
         price: '3000',
         image: "../assets/imag/serv3.jpg"
     },
+    {
+        id:7,
+        name: "IMANES",
+        price: '600',
+        image: "../assets/imag/imanes.jpg"
+    }
+    
 ]
 
 function cargarServicios(array){
