@@ -13,7 +13,6 @@ let carritoHtml = (serv) =>{
 } 
 
 function recuperoCarrito(carrito) {
-    debugger
     carrito = JSON.parse(localStorage.getItem("carrito"))
     let tabla = document.querySelector("tbody")
     let total = 0
@@ -42,6 +41,7 @@ function eliminarServicio(array, id)
      let newCarrito = eliminarServicio(carrito, id)
      localStorage.setItem("carrito", JSON.stringify(newCarrito))
      recuperoCarrito(newCarrito)
+     eliminarEnBotones()
      
  }
 
