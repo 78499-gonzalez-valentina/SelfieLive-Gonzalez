@@ -28,19 +28,19 @@ let servicios = [
     {
         id:5,
         name: "TARJETAS",
-        price: '250',
+        price: 250,
         image: "../assets/imag/serv4.png" 
     },
     {
         id:6,
         name: "CUADROS",
-        price: '3000',
+        price: 3000,
         image: "../assets/imag/serv3.jpg"
     },
     {
         id:7,
         name: "IMANES",
-        price: '600',
+        price:600,
         image: "../assets/imag/imanes.jpg"
     }
     
