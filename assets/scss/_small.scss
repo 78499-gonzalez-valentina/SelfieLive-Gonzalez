@@ -155,7 +155,7 @@ footer input{
 .body__carrito {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 90px auto 120px auto;
+    grid-template-rows: 90px auto 100px auto;
     grid-template-areas: "navegador navegador navegador" "header header header" "main main main " "footer footer footer";
   }
   
@@ -634,4 +634,13 @@ footer{
     margin-right: 100px;
     padding: 10px;
     text-align:end;
+  }
+
+  .btnCompra{
+    margin: 10px;
+    padding: 8px;
+    text-align: end;
+    margin-right: 35px;
+    border-radius: 10px;
+    font-size: 8pt;
   }

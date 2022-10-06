@@ -1,5 +1,6 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let total = 0;
+const btnCompra = document.getElementById("continuarCompra")
 
 
 let carritoHtml = (serv) =>{
@@ -73,3 +74,31 @@ function eliminarServicio(array, id)
      
  }
  eliminarEnBotones()
+
+ const loading = () => `<img src="../assets/imag/carga1.gif" width="30px">`
+
+
+const comprar = () =>{
+    btnCompra.type= "image"
+    btnCompra.src = "../assets/imag/carga1.gif"
+    btnCompra.value = loading()
+    if (carrito.length == 0){
+        toastSwal("Seleccione servicios para comprar", "center", "", "#E2DFDE")
+        btnCompra.type ="submit"
+        btnCompra.value = "Continuar compra"
+    }
+    else{
+        setTimeout(() => {
+            toastSwal("Gracias por confiar en nosotros!", "center", "", "#F5DAD5")
+            btnCompra.type ="submit"
+            btnCompra.value = "Continuar compra"
+            localStorage.setItem("carrito", JSON.stringify([]))
+        }, 2000);
+    }
+
+}
+ 
+const limpiarCarrito = () => {
+
+}
+btnCompra.addEventListener("click", comprar)
