@@ -13,13 +13,13 @@
     },
     {
         "id":3,
-        "name": 'SOUVENIR',
+        "name": "SOUVENIR",
         "price": 300,
         "image": "../assets/imag/souvenir.png"
     },
     {
         "id":4,
-        "name": 'ALBUM DE FOTOS',
+        "name": "ALBUM DE FOTOS",
         "price": 3500,
         "image": "../assets/imag/serv5.jpg"
     },
