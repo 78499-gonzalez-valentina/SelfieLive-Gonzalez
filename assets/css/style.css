@@ -134,7 +134,7 @@ footer input {
 .body__carrito {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: 90px auto 200px auto;
+  grid-template-rows: 90px auto 120px auto;
   grid-template-areas: "navegador navegador navegador" "header header header" "main main main " "footer footer footer";
 }
 
@@ -545,6 +545,15 @@ td {
   height: 30px;
 }
 
+.total {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-right: 100px;
+  padding: 10px;
+  text-align: end;
+}
+
 @media (min-width: 768px) {
   .inicio {
     background: url(../imag/cropped-cropped-iuyiuyiu-011.png) no-repeat fixed center center #333;
@@ -656,6 +665,10 @@ td {
     width: 200px;
     text-align: center;
     border-bottom: black solid 1px;
+  }
+  .total {
+    font-size: 13px;
+    margin-right: 200px;
   }
 }
 @media (min-width: 1200px) {
@@ -787,5 +800,9 @@ td {
   }
   footer {
     font-size: 15px;
+  }
+  .total {
+    font-size: 18px;
+    margin-right: 240px;
   }
 }

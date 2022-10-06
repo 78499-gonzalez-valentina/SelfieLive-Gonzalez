@@ -1,28 +1,40 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
+let total = 0;
 
 
 let carritoHtml = (serv) =>{
-    return `<tr class="listaCompra">
+    let body = `<tr class="listaCompra">
                     <td>${serv.name}</td>
                     <td>Precio: $ ${serv.price}</td>
                     <td>Cantidad: ${serv.quantity}</td>
                     <td>Subtotal: $ ${serv.price * serv.quantity}</td>
                     <td><button class= "borrar" id="btn${serv.id}">Quitar</button></td>
-            </tr>`
+                </tr>`
+    total += serv.price * serv.quantity
+    return body
+            
 } 
 
 function recuperoCarrito(carrito) {
     carrito = JSON.parse(localStorage.getItem("carrito"))
     let tabla = document.querySelector("tbody")
-    let total = 0
     tabla.innerHTML = carrito.map(serv => carritoHtml(serv))
-                                          
-        
+    document.getElementById("total").innerHTML = "Total: " + " "+ total  
+
 }
 
+const mostrarCarrito = (carrito) => {
+    if (carrito.length == 0){
+        
+        return document.getElementById("tbody").innerHTML = "El carrito esta vacio!"
+    }
+    else{
+        recuperoCarrito(carrito)
+    }
 
-recuperoCarrito(carrito)
+}
+
+mostrarCarrito(carrito)
 
 function eliminarServicio(array, id)
  {
@@ -37,11 +49,16 @@ function eliminarServicio(array, id)
 
  function eliminarServicioDelCarrito(id)
  {
+    total = 0
     innerHTML = ""
-     let newCarrito = eliminarServicio(carrito, id)
-     localStorage.setItem("carrito", JSON.stringify(newCarrito))
-     recuperoCarrito(newCarrito)
-     eliminarEnBotones()
+    let newCarrito = eliminarServicio(carrito, id)
+    localStorage.setItem("carrito", JSON.stringify(newCarrito))
+    recuperoCarrito(newCarrito)
+    eliminarEnBotones()
+    if(carrito.length == 0){
+        return document.getElementById("tbody").innerHTML = "El carrito esta vacio!"
+        document.getElementById('total').style.display = 'none'
+    }
      
  }
 

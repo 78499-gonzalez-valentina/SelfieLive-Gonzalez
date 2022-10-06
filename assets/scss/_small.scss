@@ -151,10 +151,11 @@ footer input{
     
 }
 
+
 .body__carrito {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 90px auto 200px auto;
+    grid-template-rows: 90px auto 120px auto;
     grid-template-areas: "navegador navegador navegador" "header header header" "main main main " "footer footer footer";
   }
   
@@ -624,4 +625,13 @@ footer{
   .borrar{
     width: 100px;
     height: 30px;
+  }
+
+  .total{
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-right: 100px;
+    padding: 10px;
+    text-align:end;
   }

@@ -98,7 +98,7 @@ const eventoEnBotones = () =>
     debugger
     let botones = document.querySelectorAll('.learn-more');
     for (const boton of botones) {
-        boton.addEventListener('click', ()=> agregarAlCarrito(boton.id))
+        boton.addEventListener('click', ()=> {agregarAlCarrito(boton.id), toastSwal("Servicio agregado con exito!", "top-end", "success")})
     }
 }
 
