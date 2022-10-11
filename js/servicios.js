@@ -1,5 +1,8 @@
 const inputFiltrar = document.getElementById("buscarServicio")
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+const URL = "../assets/bbdd/servicios.json"
+let services = []
+let contenidoHTML = ""
 let servicios = [
     {
         id:1,
@@ -46,51 +49,80 @@ let servicios = [
     
 ]
 
-function cargarServicios(array){
+const mostrarError = ()=> {
+    return `<div class="error">
+                <h2>¡Ups...!</h2>
+                <p>No pudimos cargar la información.</p>
+                <p>Por favor, intenta nuevamente en unos minutos.</p>
+            </div>`
+}
+
+const cargarContenido  = async ()=> {
+    debugger
     let container = document.querySelector('#container');
-    console.log('container: ', container);
-    let fila = ""
-        array.forEach(serv => {
-            let div = document.createElement('div');
-            div.setAttribute('class', 'card');
-            div.innerHTML = `
+    try {
+        const response = await fetch(URL)
+        const data = await response.json()
+              services = data 
+              services.forEach(serv => {contenidoHTML += cargarServicios(serv)})
+    } 
+    catch (error) {
+        contenidoHTML += mostrarError()
+    }
+    finally {
+        container.innerHTML = contenidoHTML
+    }
+}
+
+function cargarServicios(serv){
+    return `<div class= "card">
                 <img class="img" src="${serv.image}" alt="${serv.name}">
                 <h5>${serv.id}. ${serv.name}</h5>
                 <h6>$${serv.price}</h6>
                 <button class="learn-more" id="${serv.id}">Agregar al carrito</button>
-            `;
-            container.appendChild(div);
+            </div>
+    `
+}
+
+cargarContenido()
+
+
+// function cargarServicios(array){
+//     let container = document.querySelector('#container');
+//     console.log('container: ', container);
+//     let fila = ""
+//         array.forEach(serv => {
+//             let div = document.createElement('div');
+//             div.setAttribute('class', 'card');
+//             div.innerHTML = `
+//                 <img class="img" src="${serv.image}" alt="${serv.name}">
+//                 <h5>${serv.id}. ${serv.name}</h5>
+//                 <h6>$${serv.price}</h6>
+//                 <button class="learn-more" id="${serv.id}">Agregar al carrito</button>
+//             `;
+//             container.appendChild(div);
               
-        });
+//         });
    
    
-    }
+//     }
    
-cargarServicios(servicios)
 
 function filtrarServicios() { 
-    inputFiltrar.value = inputFiltrar.value.trim().toUpperCase()
-    if (inputFiltrar.value !== "") {
-        const resultado = servicios.filter(servicio => servicio.name.includes(inputFiltrar.value))
-        container.innerHTML = ""
-        container.innerHTML = resultado.map(serv => `<section class = "busqueda">
-                                                        <div class = "bus">
-                                                            <img class="img" src="${serv.image}" alt="${serv.name}">
-                                                            <h5>${serv.id}. ${serv.name}</h5>
-                                                            <h6>$${serv.price}</h6>
-                                                            <button class="learn-more" id="btn${serv.id}">Agregar al carrito</button>
-                                                        </div>
-                                                    </section>
-                                                 `).join("")
+    inputResultado = inputFiltrar.value.trim().toUpperCase()
+    if (inputResultado !== "") {
+        const resultado = servicios.filter(servicio => servicio.name.includes(inputResultado))
+        container.innerHTML = resultado.map(serv => cargarServicios(serv)).join("")
               
-              } 
+    } 
     else {
-        container.innerHTML = " "
-        cargarServicios(servicios)
+        container.innerHTML = services.map(services => cargarServicios(services))
+        
     }
 }
 
 //A medida que escribimos se ejecute el filtro 
+debugger
 inputFiltrar.addEventListener("keydown", filtrarServicios) 
 
 const eventoEnBotones = () => 
