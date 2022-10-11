@@ -62,11 +62,12 @@ const mostrarError = ()=> {
 }
 
 const cargarContenido  = async ()=> {
+    let container = document.querySelector('#container');
     try {
         const response = await fetch(URL)
         const data = await response.json()
               services = data 
-              services.forEach(serv => contenidoHTML += cargarServicios(serv))
+              services.forEach(serv => {contenidoHTML += cargarServicios(serv)})
     } 
     catch (error) {
         contenidoHTML += mostrarError()
@@ -76,47 +77,48 @@ const cargarContenido  = async ()=> {
     }
 }
 
-function cargarServicios(array){
-    let container = document.querySelector('#container');
-    console.log('container: ', container);
-    let fila = ""
-        array.forEach(serv => {
-            let div = document.createElement('div');
-            div.setAttribute('class', 'card');
-            div.innerHTML = `
+function cargarServicios(serv){
+    return `<div class= "card">
                 <img class="img" src="${serv.image}" alt="${serv.name}">
                 <h5>${serv.id}. ${serv.name}</h5>
                 <h6>$${serv.price}</h6>
                 <button class="learn-more" id="${serv.id}">Agregar al carrito</button>
-            `;
-            container.appendChild(div);
+            </div>
+    `
+}
+
+// function cargarServicios(array){
+//     let container = document.querySelector('#container');
+//     console.log('container: ', container);
+//     let fila = ""
+//         array.forEach(serv => {
+//             let div = document.createElement('div');
+//             div.setAttribute('class', 'card');
+//             div.innerHTML = `
+//                 <img class="img" src="${serv.image}" alt="${serv.name}">
+//                 <h5>${serv.id}. ${serv.name}</h5>
+//                 <h6>$${serv.price}</h6>
+//                 <button class="learn-more" id="${serv.id}">Agregar al carrito</button>
+//             `;
+//             container.appendChild(div);
               
-        });
+//         });
    
    
-    }
+//     }
 cargarContenido()
 // cargarServicios(servicios)
 
 function filtrarServicios() { 
-    inputFiltrar.value = inputFiltrar.value.trim().toUpperCase()
-    if (inputFiltrar.value !== "") {
-        const resultado = servicios.filter(servicio => servicio.name.includes(inputFiltrar.value))
+    let inputResultado = inputFiltrar.value.trim().toUpperCase()
+    if (inputResultado !== "") {
+        const resultado = servicios.filter(servicio => servicio.name.includes(inputResultado))
         container.innerHTML = ""
-        container.innerHTML = resultado.map(serv => `<section class = "busqueda">
-                                                        <div class = "bus">
-                                                            <img class="img" src="${serv.image}" alt="${serv.name}">
-                                                            <h5>${serv.id}. ${serv.name}</h5>
-                                                            <h6>$${serv.price}</h6>
-                                                            <button class="learn-more" id="btn${serv.id}">Agregar al carrito</button>
-                                                        </div>
-                                                    </section>
-                                                 `).join("")
+        container.innerHTML = resultado.map(serv => cargarServicios(serv)).join("")
               
               } 
     else {
-        container.innerHTML = " "
-        cargarServicios(servicios)
+        container.innerHTML = services.map(services => cargarServicios(services))
     }
 }
 
@@ -159,3 +161,4 @@ function agregarAlCarrito(id){
     
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
+
