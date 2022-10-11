@@ -3,6 +3,8 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const URL = "../assets/bbdd/servicios.json"
 let services = []
 let contenidoHTML = ""
+
+
 let servicios = [
     {
         id:1,
@@ -31,19 +33,19 @@ let servicios = [
     {
         id:5,
         name: "TARJETAS",
-        price: '250',
+        price: 250,
         image: "../assets/imag/serv4.png" 
     },
     {
         id:6,
         name: "CUADROS",
-        price: '3000',
+        price: 3000,
         image: "../assets/imag/serv3.jpg"
     },
     {
         id:7,
         name: "IMANES",
-        price: '600',
+        price:600,
         image: "../assets/imag/imanes.jpg"
     }
     
@@ -127,7 +129,6 @@ inputFiltrar.addEventListener("keydown", filtrarServicios)
 
 const eventoEnBotones = () => 
 {
-    debugger
     let botones = document.querySelectorAll('.learn-more');
     for (const boton of botones) {
         boton.addEventListener('click', ()=> {agregarAlCarrito(boton.id), toastSwal("Servicio agregado con exito!", "top-end", "success")})
@@ -162,3 +163,4 @@ function agregarAlCarrito(id){
     
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
+

@@ -1,8 +1,16 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let total = 0;
 const btnCompra = document.getElementById("continuarCompra")
+const totalCart = document.getElementById("totalCart")
 
 
+const cantCarrito = () => {
+    let total = carrito.reduce((acc, value) => acc + value.quantity, 0)
+    totalCart.innerHTML = total
+
+}
+
+cantCarrito()
 let carritoHtml = (serv) =>{
     let body = `<tr class="listaCompra">
                     <td>${serv.name}</td>
