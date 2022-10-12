@@ -1,55 +1,9 @@
 const inputFiltrar = document.getElementById("buscarServicio")
-const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+// const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const URL = "../assets/bbdd/servicios.json"
 let services = []
 let contenidoHTML = ""
-
-
-let servicios = [
-    {
-        id:1,
-        name: "SELFIETAG",
-        price: 2000,
-        image: "../assets/imag/serv1.png"
-    },
-    {
-        id:2,
-        name: "CABINA DE FOTOS",
-        price: 5000,
-        image: "../assets/imag/cabinafinal.jpg"
-    },
-    {
-        id:3,
-        name: 'SOUVENIR',
-        price: 300,
-        image: "../assets/imag/souvenir.png"
-    },
-    {
-        id:4,
-        name: 'ALBUM DE FOTOS',
-        price: 3500,
-        image: "../assets/imag/serv5.jpg"
-    },
-    {
-        id:5,
-        name: "TARJETAS",
-        price: 250,
-        image: "../assets/imag/serv4.png" 
-    },
-    {
-        id:6,
-        name: "CUADROS",
-        price: 3000,
-        image: "../assets/imag/serv3.jpg"
-    },
-    {
-        id:7,
-        name: "IMANES",
-        price:600,
-        image: "../assets/imag/imanes.jpg"
-    }
-    
-]
+const servicios =  []
 
 const mostrarError = ()=> {
     return `<div class="error">
@@ -60,13 +14,13 @@ const mostrarError = ()=> {
 }
 
 const cargarContenido  = async ()=> {
-    debugger
     let container = document.querySelector('#container');
     try {
         const response = await fetch(URL)
         const data = await response.json()
               services = data 
               services.forEach(serv => {contenidoHTML += cargarServicios(serv)})
+              servicios.push(...data)
     } 
     catch (error) {
         contenidoHTML += mostrarError()
@@ -113,7 +67,7 @@ cargarContenido()
 function filtrarServicios() { 
     inputResultado = inputFiltrar.value.trim().toUpperCase()
     if (inputResultado !== "") {
-        const resultado = servicios.filter(servicio => servicio.name.includes(inputResultado))
+        const resultado = services.filter(servicio => servicio.name.includes(inputResultado))
         container.innerHTML = resultado.map(serv => cargarServicios(serv)).join("")
               
     } 
@@ -124,7 +78,6 @@ function filtrarServicios() {
 }
 
 //A medida que escribimos se ejecute el filtro 
-debugger
 inputFiltrar.addEventListener("keydown", filtrarServicios) 
 
 const eventoEnBotones = () => 
@@ -147,15 +100,14 @@ function agregarAlCarrito(id){
         //si no esta en el carrito se lo agrega
         const servicio = servicios.find(serv => serv.id == id)
         
-            let newServ ={
-                id: servicio.id,
-                name: servicio.name,
-                price: servicio.price,
-                image : servicio.image,
-                quantity: 1
-
-            }
-            carrito.push(newServ)
+        let newServ ={
+            id: servicio.id,
+            name: servicio.name,
+            price: servicio.price,
+            image : servicio.image,
+            quantity: 1
+        }
+        carrito.push(newServ)
         
        
     }

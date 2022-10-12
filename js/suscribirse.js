@@ -18,10 +18,10 @@ const toastSwal = (mensaje,position,icon, bgcolor, color)=> {
 }
 
 function guardarEmail() {
-    localStorage.setItem("Email suscripto",emailSuscripcion.value)
+    localStorage.setItem("Email suscripto", emailSuscripcion.value)
 }
 
-btnSuscribir.addEventListener("click", ()=> {toastSwal("Suscripcion exitosa!", "bottom", "success"), emailSuscripcion.value = " ", guardarEmail()} )
+btnSuscribir.addEventListener("click", ()=> {toastSwal("Suscripcion exitosa!", "bottom", "success"), guardarEmail(),emailSuscripcion.value = " "} )
 
 
 

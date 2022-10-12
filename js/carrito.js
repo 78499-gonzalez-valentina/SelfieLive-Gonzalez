@@ -5,8 +5,8 @@ const totalCart = document.getElementById("totalCart")
 
 
 const cantCarrito = () => {
-    let total = carrito.reduce((acc, value) => acc + value.quantity, 0)
-    totalCart.innerHTML = total
+    let tot = carrito.reduce((acc, value) => acc + value.quantity, 0)
+    totalCart.innerHTML = tot
 
 }
 
