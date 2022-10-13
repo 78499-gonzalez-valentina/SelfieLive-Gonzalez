@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script defer src="../js/suscribirse.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,20 +47,42 @@
       </nav>
       <header class="header__carrito" id="contenedorCarrito">
         <div data-aos="zoom-in" data-aos-duration="3000" class="titulo__servicio">
-          <h1 class="carr">Carrito</h1>
+          <h4>Ingrese los datos de sus tarjeta</h4>
           
-
-        <table>
-            <tbody id="tbody">
-
-          
-            </tbody>
-        </table>
-          <div id="total" class="total">
-          </div>
-          <div id="btnCompra" class="btnCompra">
-            <input class="btnCompra"  id="continuarCompra" type="submit" value="Continuar compra"  >
-           </div>
+        </div>
+        <div data-aos="fade-left" data-aos-duration="3000"class="datos">
+            <form action=""></form>
+                <fieldset class="borde">
+                    <label for="nombre">Numero de tarjeta</label>
+                    <br>
+                    <input class="tarj" type="number" name="numero" id="numero"  required>
+                
+                    <br>
+                    <br>
+                    <label for="nombre">Nombre y Apellido</label>
+                    <br>
+                    <input class="tarj" type="text" name="nombre" id="nomYApe"  required>
+                
+                    <br>
+                    <br>
+                    <label for="fecha">Fecha de expiracion</label>
+                    <br>
+                    <input class="tarj" type="datetime" name="fecha" id="fecha"  required>
+                    <br>
+                    <br>
+                    <label for="codigo">Codigo de seguridad </label>
+                    <br>
+                    <input class="tarj" type="number" name="codigo" id="codigo"  required>
+                    <br>
+                    <br>
+                    <label for="dni">Dni del titular de la tarjeta</label>
+                    <br>
+                    <input class="tarj" type="number" name="dni" id="dni"  required>
+                    <br>
+                    <br>
+                    <input class="boton" id="btnComprar" type="submit" value="Confirmar compra">
+                </fieldset>
+            </form>
         </div>
         
     </header>

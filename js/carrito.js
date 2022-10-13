@@ -1,7 +1,13 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let total = 0;
 const btnCompra = document.getElementById("continuarCompra")
+const btnComprar = document.getElementById("btnComprar")
 
+const numero = document.getElementById("numero")
+const nomYApe = document.getElementById("nomYApe")
+const fecha = document.getElementById("fecha")
+const codigo =document.getElementById("codigo")
+const dni  =document.getElementById("dni")
 
 
 let carritoHtml = (serv) =>{
@@ -89,16 +95,32 @@ const comprar = () =>{
         btnCompra.value = "Continuar compra"
     }
     else{
-        setTimeout(() => {
-            toastSwal("Gracias por confiar en nosotros!", "center", "", "#F5DAD5")
-            btnCompra.type ="submit"
-            btnCompra.value = "Continuar compra"
-            localStorage.setItem("carrito", JSON.stringify([]))
-        }, 2000);
+        setTimeout( ()  =>{btnCompra.onclick(location.href="../paginas/tarjeta.html")
+        btnCompra.type ="submit"
+         btnCompra.value = "Continuar compra",
+         localStorage.setItem("carrito", JSON.stringify([]))}, 2000)
+       
+         
     }
 
 }
+
+const confirmarCompra = () =>{
+    if (numero.value == " " || nomYApe.value == " " || fecha.value == "" || codigo.value == " " || dni.value == " "){
+        toastSwal("Complete los campos para continuar", "center", "", "#E2DFDE")
+    }
+    else{
+        btnComprar.onclick(toastSwal("Gracias por confiar en nosotros!", "center", "", "#F5DAD5"))
+    }
+}
+// btnComprar.onclick(setTimeout(() => { debugger
+//     toastSwal("Gracias por confiar en nosotros!", "center", "", "#F5DAD5")
+//     btnCompra.type ="submit"
+//     btnCompra.value = "Continuar compra"
+//     localStorage.setItem("carrito", JSON.stringify([]))
+// }, 2000))  
  
+
 const limpiarCarrito = () => {
 
 }
