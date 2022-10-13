@@ -1,9 +1,17 @@
 const inputFiltrar = document.getElementById("buscarServicio")
-// const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const URL = "../assets/bbdd/servicios.json"
 let services = []
 let contenidoHTML = ""
 const servicios =  []
+const totalCart = document.getElementById("totalCart")
+
+
+const cantCarrito = () => {
+    let tot = carrito.reduce((acc, value) => acc + value.quantity, 0)
+    totalCart.innerHTML = tot
+
+}
 
 const mostrarError = ()=> {
     return `<div class="error">
@@ -35,34 +43,13 @@ function cargarServicios(serv){
                 <img class="img" src="${serv.image}" alt="${serv.name}">
                 <h5>${serv.id}. ${serv.name}</h5>
                 <h6>$${serv.price}</h6>
-                <button class="learn-more" id="${serv.id}">Agregar al carrito</button>
+                <button class="learn-more" onclick="agregarAlCarrito(${serv.id})" id="${serv.id}">Agregar al carrito</button>
             </div>
     `
 }
 
 cargarContenido()
 
-
-// function cargarServicios(array){
-//     let container = document.querySelector('#container');
-//     console.log('container: ', container);
-//     let fila = ""
-//         array.forEach(serv => {
-//             let div = document.createElement('div');
-//             div.setAttribute('class', 'card');
-//             div.innerHTML = `
-//                 <img class="img" src="${serv.image}" alt="${serv.name}">
-//                 <h5>${serv.id}. ${serv.name}</h5>
-//                 <h6>$${serv.price}</h6>
-//                 <button class="learn-more" id="${serv.id}">Agregar al carrito</button>
-//             `;
-//             container.appendChild(div);
-              
-//         });
-   
-   
-//     }
-   
 
 function filtrarServicios() { 
     inputResultado = inputFiltrar.value.trim().toUpperCase()
@@ -80,18 +67,10 @@ function filtrarServicios() {
 //A medida que escribimos se ejecute el filtro 
 inputFiltrar.addEventListener("keydown", filtrarServicios) 
 
-const eventoEnBotones = () => 
-{
-    let botones = document.querySelectorAll('.learn-more');
-    for (const boton of botones) {
-        boton.addEventListener('click', ()=> {agregarAlCarrito(boton.id), toastSwal("Servicio agregado con exito!", "top-end", "success")})
-    }
-}
-
-eventoEnBotones()
 
 function agregarAlCarrito(id){
     const servicio = carrito.find(serv => serv.id == id)
+    toastSwal("Servicio agregado con exito!", "top-end", "success")
     if(servicio){
         //si ya esta en el carrito
         servicio.quantity++;
@@ -112,7 +91,7 @@ function agregarAlCarrito(id){
        
     }
 
-    
+    cantCarrito()
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 

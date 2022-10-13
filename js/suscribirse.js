@@ -21,7 +21,14 @@ function guardarEmail() {
     localStorage.setItem("Email suscripto", emailSuscripcion.value)
 }
 
-btnSuscribir.addEventListener("click", ()=> {toastSwal("Suscripcion exitosa!", "bottom", "success"), guardarEmail(),emailSuscripcion.value = " "} )
+btnSuscribir.addEventListener("click", ()=> {
+    debugger
+    if (emailSuscripcion.value == ""){
+    toastSwal("Ingrese email para suscribirse.", "bottom", "", "#E2DFDE")}
+
+    else{
+        toastSwal("Suscripcion exitosa!", "bottom", "success"), guardarEmail(),emailSuscripcion.value = ""}})
+    
 
 
 
