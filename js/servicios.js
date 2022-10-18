@@ -4,14 +4,6 @@ const URL = "../assets/bbdd/servicios.json"
 let services = []
 let contenidoHTML = ""
 const servicios =  []
-const totalCart = document.getElementById("totalCart")
-
-
-const cantCarrito = () => {
-    let tot = carrito.reduce((acc, value) => acc + value.quantity, 0)
-    totalCart.innerHTML = tot
-
-}
 
 const mostrarError = ()=> {
     return `<div class="error">
@@ -91,7 +83,6 @@ function agregarAlCarrito(id){
        
     }
 
-    cantCarrito()
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
